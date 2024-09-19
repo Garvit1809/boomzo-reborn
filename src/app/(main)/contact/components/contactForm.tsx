@@ -28,9 +28,7 @@ import { API_VERSION, BASE_URL } from "@/constants/endpoints";
 import { useToast } from "@/hooks/use-toast";
 import AnimatedButton from "@/components/aceternity/AnimatedButton";
 
-type Props = {};
-
-const ContactForm = (props: Props) => {
+const ContactForm = () => {
   const formSchema = z.object({
     username: z.string().min(2).max(50),
     email: z.string().email(),

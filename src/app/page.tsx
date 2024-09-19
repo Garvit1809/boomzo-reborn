@@ -1,38 +1,39 @@
+"use client"
 import PageWrapper from "../components/global/PageWrapper";
 import HeroBg from "../../public/hero_bg.png";
 import HeroImg from "../../public/hero_img.png";
 import Image from "next/image";
 import Img1 from "../../public/1.png";
-import Img2 from "../../public/2.png";
 import Img3 from "../../public/3.png";
 import Img4 from "../../public/4.png";
 import Img5 from "../../public/5.png";
 import AnimatedButton from "@/components/aceternity/AnimatedButton";
 import { ArrowRight } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const SERVICE_CARDS = [
   {
     name: "Lets Plan your Trip",
     img: Img1,
-    route: "/",
+    route: "/tour-travel",
     btnText: "Get Started",
   },
   {
     name: "Let's Celebrate in Style",
     img: Img5,
-    route: "/",
+    route: "/celebrations",
     btnText: "Get Started",
   },
   {
     name: "Let's Find Your Flat",
     img: Img4,
-    route: "/",
+    route: "/real-estate",
     btnText: "Get Started",
   },
   {
     name: "Let's Connect with Influencers",
     img: Img3,
-    route: "/",
+    route: "/influencers",
     btnText: "Coming Soon",
   },
 ];
@@ -57,6 +58,7 @@ const IMPACT_NUMBERS = [
 ];
 
 export default function Home() {
+  const route = useRouter();
   return (
     // <PageWrapper className="block bg-[#FFFFFF]" logo="dark">
     <PageWrapper className="block bg-[black]" logo="light">
@@ -120,6 +122,7 @@ export default function Home() {
                 }
                 buttonType="button"
                 className="bg-black text-white/80 text-xs border-none"
+                onClick={() => route.push(card.route)}
               />
             </div>
           );

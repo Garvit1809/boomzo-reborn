@@ -1,34 +1,23 @@
-import {
-  agencyFreelancerBenefits,
-  businessBenefits,
-  contentBenefits,
-} from "@/constants/about-us";
-
-const KeyPairComp = ({ heading, desc }: { heading: string; desc: string }) => {
-  return (
-    <div>
-      <h3 className="text-sm md:text-lg font-bold inline text-white/80 underline pr-2 leading-none">
-        {heading}
-      </h3>
-      <p className="text-white inline text-sm md:text-lg font-normal leading-tight">
-        {desc}
-      </p>
-    </div>
-  );
-};
-
 export const tabs = [
   {
     title: "Our Mission",
     value: "mission",
     content: (
-      <div className="w-full overflow-auto lg:overflow-hidden relative h-full rounded-2xl p-10 text-sm md:text-2xl font-medium text-white bg-gradient-to-br from-[#46CD2E] to-[#46CD2E]/80">
+      <div className="w-full overflow-auto lg:overflow-hidden relative h-full rounded-2xl p-10 text-sm md:text-2xl font-medium text-white bg-gradient-to-br from-black to-black/80">
         <p>
-          At Boomzo, our mission is clear: to transform how businesses connect
-          with top-tier talent. We dive deep into understanding your unique
-          needs and challenges, pairing you with the perfect match using smart
-          AI and expert oversight. We&apos;re here to make every project not
-          just successful, but extraordinary.
+          We have seen businesses misled by paying for results that never come,
+          damaging the trust of Indian business owners. Our mission is to change
+          this by charging only for verified leads, not hefty service fees.
+          <br />
+          <br />
+          We are dedicated to helping Indian businesses grow with high-quality,
+          tailored leads that deliver real results. Our focus on transparency
+          and results builds trust and long-term partnerships.
+          <br />
+          <br />
+          Our goal is to revolutionize B2B lead generation in India, making it
+          accessible and effective for all businesses. We strive to be the
+          catalyst for success in a competitive market.
         </p>
       </div>
     ),
@@ -37,13 +26,21 @@ export const tabs = [
     title: "Our Vision",
     value: "vision",
     content: (
-      <div className="w-full overflow-auto lg:overflow-hidden relative h-full rounded-2xl p-10 text-sm md:text-2xl font-medium text-white bg-gradient-to-br from-[#46CD2E] to-[#46CD2E]/80">
+      <div className="w-full overflow-auto lg:overflow-hidden relative h-full rounded-2xl p-10 text-sm md:text-2xl font-medium text-white bg-gradient-to-br from-black to-black/80">
         <p>
-          Our vision? Simple. To set the new gold standard in collaboration. We
-          see a world where finding the right partner is effortless and
-          achieving exceptional results is the norm. With Boomzo, this isn’t
-          just a dream; it&apos;s our commitment to shaping a future where
-          extraordinary is expected and every project shines.
+          Our vision is a fair marketplace where Indian businesses grow without
+          fear of being misled. We want businesses to pay only for genuine
+          benefits, fostering trust and accountability.
+          <br />
+          <br />
+          We aim to be India&apos;s leading provider of verified B2B leads,
+          known for integrity and client success. By innovating and adapting, we
+          set new industry standards.
+          <br />
+          <br />
+          Ultimately, we empower Indian businesses to reach their full
+          potential, contributing to a thriving economy. We aspire to be a
+          trusted partner in this journey.
         </p>
       </div>
     ),
@@ -52,47 +49,20 @@ export const tabs = [
     title: "Boomzo's Benefits",
     value: "benefits",
     content: (
-      <div className="w-full overflow-auto lg:overflow-hidden relative h-full rounded-2xl p-10 text-sm md:text-4xl font-bold text-white bg-gradient-to-br from-[#46CD2E] to-[#46CD2E]/80 grid grid-cols-2">
-        <div className="border-r-2 border-r-white pr-2 md:pr-6 flex flex-col gap-y-6 items-center">
-          <h2>For Businesses</h2>
-          <ul className="w-full flex flex-col gap-y-2 md:gap-y-4">
-            {businessBenefits.map(
-              (
-                benefit: { title: string; description: string },
-                idx: React.Key | null | undefined
-              ) => {
-                return (
-                  <li key={idx}>
-                    <KeyPairComp
-                      desc={benefit.description}
-                      heading={benefit.title}
-                    />
-                  </li>
-                );
-              }
-            )}
-          </ul>
-        </div>
-        <div className="pl-6 flex flex-col gap-y-6 items-center">
-          <h2>For Agencies and Freelancers</h2>
-          <ul className="w-full flex flex-col gap-y-2 md:gap-y-4">
-            {agencyFreelancerBenefits.map(
-              (
-                benefit: { title: string; description: string },
-                idx: React.Key | null | undefined
-              ) => {
-                return (
-                  <li key={idx}>
-                    <KeyPairComp
-                      desc={benefit.description}
-                      heading={benefit.title}
-                    />
-                  </li>
-                );
-              }
-            )}
-          </ul>
-        </div>
+      <div className="w-full overflow-auto lg:overflow-hidden relative h-full rounded-2xl p-10 text-sm md:text-2xl font-medium text-white bg-gradient-to-br from-black to-black/80">
+        <p>
+          Boomzo delivers high-quality, verified leads tailored to your business
+          needs, enhancing conversion rates and growth potential.
+          <br />
+          <br />
+          We make the first call to verify each lead&apos;s quality, ensuring
+          you only pay for leads that meet your criteria, providing clear value
+          and ROI.
+          <br />
+          <br />
+          Partner with Boomzo for transparent processes and dedicated support,
+          fostering long-term success and business growth.
+        </p>
       </div>
     ),
   },
@@ -100,30 +70,19 @@ export const tabs = [
     title: "Boomzo's Fututre",
     value: "future",
     content: (
-      <div className="w-full overflow-auto relative h-full rounded-2xl p-10 text-sm md:text-2xl font-medium text-white bg-gradient-to-br from-[#46CD2E] to-[#46CD2E]/80 flex flex-col gap-y-6 md:gap-y-10">
-        <p className="text-white">
-          Concerned about finding the right partners? At Boomzo, we&apos;re
-          always improving! Here&apos;s what&apos;s coming soon:
-        </p>
-        <div className="w-full flex flex-col gap-y-2 md:gap-y-4">
-          {contentBenefits.map(
-            (
-              benefit: { title: string; description: string },
-              idx: React.Key | null | undefined
-            ) => {
-              return (
-                <li className="list-none" key={idx}>
-                  <KeyPairComp
-                    desc={benefit.description}
-                    heading={benefit.title}
-                  />
-                </li>
-              );
-            }
-          )}
-        </div>
-        <p className="text-white">
-          Join Boomzo and experience a new level of collaboration and success!
+      <div className="w-full overflow-auto lg:overflow-hidden relative h-full rounded-2xl p-10 text-sm md:text-2xl font-medium text-white bg-gradient-to-br from-black to-black/80">
+        <p>
+          We are creating a platform to simplify Marketing + Sales, letting you
+          focus on your core business. We handle everything, so you can
+          concentrate on what you do best.
+          <br />
+          <br />
+          With Boomzo, you only pay when results are real—when money hits your
+          bank account. We manage lead generation and conversion seamlessly.
+          <br />
+          <br />
+          Our vision is to revolutionize business growth with a hassle-free,
+          results-driven approach that aligns with your success.
         </p>
       </div>
     ),

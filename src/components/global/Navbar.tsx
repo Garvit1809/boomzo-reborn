@@ -1,7 +1,16 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { Contact, Home, Info, MenuIcon } from "lucide-react";
+import {
+  Building,
+  Contact,
+  Home,
+  Info,
+  MenuIcon,
+  Mic,
+  PartyPopper,
+  Plane,
+} from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
@@ -9,6 +18,7 @@ import WhiteLogo from "../../../public/logoWhiteCom.png";
 import BlackLogo from "../../../public/logoBlack.png";
 import { HoveredLink, MenuItem } from "../aceternity/navbar-menu";
 import { SERVICE_ROUTES } from "@/constants/service-routes";
+import { SERVICES } from "@/lib/enums";
 
 const Navbar = ({
   className,
@@ -62,7 +72,7 @@ const Navbar = ({
   return (
     <div
       className={cn(
-        "absolute top-0 flex border-0 border-red-600 items-center justify-between px-[5vw] md:px-[5vw] w-full h-[4rem] bg-transparent z-20 max-w-[1450px] mx-auto",
+        "absolute top-0 flex items-center justify-between px-[5vw] md:px-[5vw] w-full h-[4rem] bg-transparent z-20 max-w-[1450px] mx-auto",
         className
       )}
     >
@@ -96,6 +106,9 @@ const Navbar = ({
             </div>
           </MenuItem>
         </div>
+        <Link href="/about" className="text-white">
+          About Us
+        </Link>
         <Link href="/contact" className="text-white">
           Contact Us
         </Link>
@@ -129,7 +142,27 @@ const Navbar = ({
         <div className="bg-[#f7faff]/90 h-full p-4">
           {[
             { title: "Home", icon: <Home />, path: "/" },
-            { title: "Services", icon: <Info />, path: "/about" },
+            {
+              title: SERVICES.TourAndTravel,
+              icon: <Plane />,
+              path: "/tour-travel",
+            },
+            {
+              title: SERVICES.Celebrations,
+              icon: <PartyPopper />,
+              path: "/celebrations",
+            },
+            {
+              title: SERVICES.RealEstate,
+              icon: <Building />,
+              path: "/real-estate",
+            },
+            {
+              title: SERVICES.Influencers,
+              icon: <Mic />,
+              path: "/influencers",
+            },
+            { title: "About Us", icon: <Info />, path: "/about" },
             { title: "Contact Us", icon: <Contact />, path: "/contact" },
           ].map((option, idx) => (
             <a

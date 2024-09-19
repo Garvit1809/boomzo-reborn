@@ -83,7 +83,7 @@ export const Tabs = ({
         active={active}
         key={active.value}
         hovering={hovering}
-        className={cn("mt-16 md:mt-20", contentClassName)}
+        className={cn("mt-20 md:mt-20", contentClassName)}
       />
     </>
   );

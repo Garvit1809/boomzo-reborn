@@ -1,8 +1,8 @@
 "use client";
-import AnimatedButton from "@/components/aceternity/AnimatedButton";
-import Header from "@/components/forms/lead-contact/header";
-import LeadContactInfo from "@/components/global/LeadContactInfo";
-import PageWrapper from "@/components/global/PageWrapper";
+import { zodResolver } from "@hookform/resolvers/zod";
+import React from "react";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
 import {
   Form,
   FormControl,
@@ -19,30 +19,26 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { zodResolver } from "@hookform/resolvers/zod";
-import React from "react";
-import { useForm } from "react-hook-form";
-import PhoneInputWithCountrySelect from "react-phone-number-input";
+import AnimatedButton from "@/components/aceternity/AnimatedButton";
+import PageWrapper from "@/components/global/PageWrapper";
+import Header from "@/components/forms/lead-contact/header";
+import LeadContactInfo from "@/components/global/LeadContactInfo";
 import "react-phone-number-input/style.css";
 import "../contact/components/phone.css";
-import { z } from "zod";
+import PhoneInputWithCountrySelect from "react-phone-number-input";
 
-const TourAndTravel = () => {
-  const DESTINATIONS = [
-    "Thailand",
-    "Vietnam",
-    "Dubai",
-    "Singapore",
-    "Malaysia",
-    "Sri Lanka",
-    "Bali",
-    "Europe",
-    "Rajasthan",
-    "Kerala",
-    "Leh-Ladakh",
-    "Goa",
-    "Himachal Pradesh",
-    "Andaman and Nicobar Islands",
+const Celebrations = () => {
+  const OCCASIONS = [
+    "Birthday",
+    "Anniversary",
+    "Wedding",
+    "Housewarming",
+    "Baby Shower",
+    "Diwali",
+    "Holi",
+    "Eid",
+    "Christmas",
+    "New Year",
   ] as const;
 
   const formSchema = z.object({
@@ -55,7 +51,7 @@ const TourAndTravel = () => {
       .regex(/^\d+$/, "Phone number must contain only digits")
       .min(10, "Phone number must be at least 10 digits long")
       .max(15, "Phone number must not exceed 15 digits"),
-    destination: z.enum(DESTINATIONS),
+    occasion: z.enum(OCCASIONS),
   });
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -77,8 +73,8 @@ const TourAndTravel = () => {
           <div className="relative z-10 w-[65%] mx-auto flex flex-col items-center justify-center bg-white rounded-2xl">
             {/* header */}
             <Header
-              title="Let's Plan Your Adventure!"
-              subTitle="Contact us to start your dream trip today!"
+              title="Party Time Awaits!"
+              subTitle="Reach out to make your event amazing!"
             />
             {/* body */}
             <div className="flex w-full">
@@ -123,23 +119,23 @@ const TourAndTravel = () => {
                     />
                     <FormField
                       control={form.control}
-                      name="destination"
+                      name="occasion"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Destination</FormLabel>
+                          <FormLabel>Occasion</FormLabel>
                           <FormControl>
                             <Select
                               onValueChange={(value) => field.onChange(value)}
                               defaultValue={field.value}
                             >
                               <SelectTrigger>
-                                <SelectValue placeholder="Select a destination" />
+                                <SelectValue placeholder="Select a occasion" />
                               </SelectTrigger>
                               <SelectContent>
-                                {DESTINATIONS.map((destination, idx) => {
+                                {OCCASIONS.map((occasion, idx) => {
                                   return (
-                                    <SelectItem key={idx} value={destination}>
-                                      {destination}
+                                    <SelectItem key={idx} value={occasion}>
+                                      {occasion}
                                     </SelectItem>
                                   );
                                 })}
@@ -166,4 +162,4 @@ const TourAndTravel = () => {
   );
 };
 
-export default TourAndTravel;
+export default Celebrations;
