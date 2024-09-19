@@ -20,21 +20,7 @@ import axios from "axios";
 import { API_VERSION, BASE_URL } from "@/constants/endpoints";
 import SocialIcons from "./SocialIcons";
 import AnimatedButton from "../aceternity/AnimatedButton";
-
-const INDUSTRY_ROUTES = [
-  {
-    name: "Tour and Travel",
-    route: "/tourandtravel",
-  },
-  {
-    name: "B2B Distributors",
-    route: "/b2b",
-  },
-  {
-    name: "Celebrations",
-    route: "/celebrations",
-  },
-];
+import { SERVICE_ROUTES } from "@/constants/service-routes";
 
 const PAGEROUTES = [
   {
@@ -118,7 +104,7 @@ const Footer = () => {
 
   return (
     <div className="relative">
-      <div className="flex flex-col lg:grid lg:grid-cols-7 gap-y-[4rem] md:gap-y-[5rem] px-[5vw] pt-[8rem] pb-[5rem] text-white bg-black">
+      <div className="flex flex-col lg:grid lg:grid-cols-7 gap-y-[4rem] md:gap-y-[5rem] px-[5vw] pt-[4rem] pb-[5rem] text-white bg-black">
         {/* <---------------- Heading ----------------> */}
         <div className="flex flex-col justify-start lg:justify-between col-span-3">
           <h1 className="sm:block text-4xl lg:text-5xl md:hidden lg:block leading-tight font-semibold font-wix">
@@ -166,11 +152,11 @@ const Footer = () => {
             <div className=" border-none border-white flex flex-col gap-y-4">
               <h2 className="text-xl font-bold">Services</h2>
               <ul className="flex flex-col gap-y-2 text-white/50">
-                {INDUSTRY_ROUTES.map((service, idx) => {
+                {SERVICE_ROUTES.map((service, idx) => {
                   return (
-                    <Link key={idx} href={service.route}>
+                    <Link className="w-fit" key={idx} href={service.route}>
                       <li className="hover:cursor-pointer w-fit" key={idx}>
-                        {service.name}
+                        {service.title}
                       </li>
                     </Link>
                   );
@@ -183,7 +169,7 @@ const Footer = () => {
               <ul className="flex flex-col gap-y-2 text-white/50">
                 {PAGEROUTES.map((route, idx) => {
                   return (
-                    <Link key={idx} href={route.route}>
+                    <Link className="w-fit" key={idx} href={route.route}>
                       <li className="hover:cursor-pointer w-fit">
                         {route.name}
                       </li>

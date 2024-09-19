@@ -1,0 +1,73 @@
+.PhoneInput {
+  display: flex;
+  align-items: center;
+}
+
+.PhoneInputCountry {
+  margin-right: 0.5rem;
+}
+
+.PhoneInputInput {
+  flex: 1;
+  min-width: 0;
+  height: 2.5rem;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  border: 1px solid hsl(var(--input));
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  padding: 0.5rem 0.75rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.PhoneInputInput:focus {
+  border-color: hsl(var(--ring));
+  box-shadow: 0 0 0 2px hsl(var(--ring) / 0.3);
+}
+
+.PhoneInputCountrySelect {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  border: 1px solid hsl(var(--input));
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  padding: 0.5rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.PhoneInputCountrySelect:focus {
+  border-color: hsl(var(--ring));
+  box-shadow: 0 0 0 2px hsl(var(--ring) / 0.3);
+}
+
+.PhoneInputCountrySelectArrow {
+  border-color: hsl(var(--foreground)) transparent transparent;
+  border-style: solid;
+  border-width: 0.3em 0.3em 0;
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Hover states */
+.PhoneInputInput:hover,
+.PhoneInputCountrySelect:hover {
+  border-color: hsl(var(--input) / 0.8);
+}
+
+/* Placeholder color */
+.PhoneInputInput::placeholder {
+  color: hsl(var(--muted-foreground));
+}
+
+/* Disabled state */
+.PhoneInputInput:disabled,
+.PhoneInputCountrySelect:disabled {
+  background-color: hsl(var(--muted));
+  color: hsl(var(--muted-foreground));
+  cursor: not-allowed;
+}

@@ -7,6 +7,8 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 import WhiteLogo from "../../../public/logoWhiteCom.png";
 import BlackLogo from "../../../public/logoBlack.png";
+import { HoveredLink, MenuItem } from "../aceternity/navbar-menu";
+import { SERVICE_ROUTES } from "@/constants/service-routes";
 
 const Navbar = ({
   className,
@@ -44,10 +46,23 @@ const Navbar = ({
     };
   }, []);
 
+  const [active, setActive] = useState<string | null>(null);
+
+  const openWhatsApp = () => {
+    const phoneNumber = "+918439911779"; // Replace with the phone number you want to send the message to
+    const message = "Hello Boomzo, I need a free consultation."; // Custom message
+
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+      message
+    )}`;
+
+    window.open(url, "_blank"); // Open WhatsApp in a new tab or window
+  };
+
   return (
     <div
       className={cn(
-        "absolute top-0 flex items-center justify-between px-[5vw] md:px-[3.6vw] w-full h-[7rem] bg-transparent border-2 border-red-600 z-20 max-w-[1450px] mx-auto",
+        "absolute top-0 flex border-0 border-red-600 items-center justify-between px-[5vw] md:px-[5vw] w-full h-[4rem] bg-transparent z-20 max-w-[1450px] mx-auto",
         className
       )}
     >
@@ -64,14 +79,42 @@ const Navbar = ({
       </div>
 
       {/* navbar */}
-      {/* <div>
-        <FloatingNav />
-      </div> */}
+      <div className="gap-x-14 hidden lg:flex">
+        <Link href="/" className="text-white">
+          Home
+        </Link>
+        <div className="" onMouseLeave={() => setActive(null)}>
+          <MenuItem setActive={setActive} active={active} item="Services">
+            <div className="flex flex-col space-y-4 text-sm">
+              {SERVICE_ROUTES.map((service, idx) => {
+                return (
+                  <HoveredLink key={idx} href={service.route}>
+                    {service.title}
+                  </HoveredLink>
+                );
+              })}
+            </div>
+          </MenuItem>
+        </div>
+        <Link href="/contact" className="text-white">
+          Contact Us
+        </Link>
+      </div>
 
       {/* Get free consultation btn */}
-      {/* <div className="hidden lg:inline-block">
-        <FreeConsultation />
-      </div> */}
+      <div className="hidden lg:inline-block">
+        <button
+          className="font-wix cursor-pointer flex items-center justify-center rounded-lg px-6 py-4 font-extrabold text-xl transition duration-200 hover:-translate-y-2"
+          style={{
+            background: "linear-gradient(135deg, #542daf, #ff9100)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+          }}
+          onClick={openWhatsApp}
+        >
+          Get free consultation
+        </button>
+      </div>
 
       {/* sidebar */}
       <button onClick={toggleSidebar} className="lg:hidden mr-4">
@@ -86,7 +129,7 @@ const Navbar = ({
         <div className="bg-[#f7faff]/90 h-full p-4">
           {[
             { title: "Home", icon: <Home />, path: "/" },
-            { title: "About Us", icon: <Info />, path: "/about" },
+            { title: "Services", icon: <Info />, path: "/about" },
             { title: "Contact Us", icon: <Contact />, path: "/contact" },
           ].map((option, idx) => (
             <a
