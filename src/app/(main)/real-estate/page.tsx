@@ -1,4 +1,8 @@
 "use client";
+import Header from "@/components/forms/lead-contact/header";
+import LeadContactInfo from "@/components/global/LeadContactInfo";
+import PageWrapper from "@/components/global/PageWrapper";
+import { toast } from "@/hooks/use-toast";
 import { zodResolver } from "@hookform/resolvers/zod";
 import React from "react";
 import { useForm } from "react-hook-form";
@@ -20,26 +24,18 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import AnimatedButton from "@/components/aceternity/AnimatedButton";
-import PageWrapper from "@/components/global/PageWrapper";
-import Header from "@/components/forms/lead-contact/header";
-import LeadContactInfo from "@/components/global/LeadContactInfo";
+import PhoneInputWithCountrySelect from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 import "../contact/components/phone.css";
-import PhoneInputWithCountrySelect from "react-phone-number-input";
-import { toast } from "@/hooks/use-toast";
 
-const Celebrations = () => {
-  const OCCASIONS = [
-    "Birthday",
-    "Anniversary",
-    "Wedding",
-    "Housewarming",
-    "Baby Shower",
-    "Diwali",
-    "Holi",
-    "Eid",
-    "Christmas",
-    "New Year",
+const RealEstate = () => {
+  const LOCATIONS = [
+    "Aligarh",
+    "Noida",
+    "Greater Noida",
+    "New Delhi",
+    "Gurugram",
+    "Faridabad",
   ] as const;
 
   const formSchema = z.object({
@@ -48,7 +44,7 @@ const Celebrations = () => {
       .min(2, "Name must be at least 2 characters")
       .max(100, "Name must not exceed 100 characters"),
     phoneNumber: z.string().min(1, "Phone number is required"),
-    occasion: z.enum(OCCASIONS),
+    location: z.enum(LOCATIONS),
   });
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -62,7 +58,7 @@ const Celebrations = () => {
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
     toast({
-      title: "Received your celebration request!",
+      title: "Received your real estate request!",
       style: {
         backgroundColor: "var(--mygreen)",
         color: "#fff",
@@ -78,8 +74,8 @@ const Celebrations = () => {
           <div className="relative z-10 w-full md:w-[65%] mx-auto flex flex-col items-center justify-center bg-white rounded-2xl">
             {/* header */}
             <Header
-              title="Party Time Awaits!"
-              subTitle="Reach out to make your event amazing!"
+              title="Find Your Perfect Home!"
+              subTitle="Get in touch to find your perfect place!"
             />
             {/* body */}
             <div className="flex flex-col md:flex-row w-full">
@@ -124,10 +120,10 @@ const Celebrations = () => {
                     />
                     <FormField
                       control={form.control}
-                      name="occasion"
+                      name="location"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Occasion</FormLabel>
+                          <FormLabel>Preferred Location</FormLabel>
                           <FormControl>
                             <Select
                               onValueChange={(value) => field.onChange(value)}
@@ -137,7 +133,7 @@ const Celebrations = () => {
                                 <SelectValue placeholder="Select a occasion" />
                               </SelectTrigger>
                               <SelectContent>
-                                {OCCASIONS.map((occasion, idx) => {
+                                {LOCATIONS.map((occasion, idx) => {
                                   return (
                                     <SelectItem key={idx} value={occasion}>
                                       {occasion}
@@ -167,4 +163,4 @@ const Celebrations = () => {
   );
 };
 
-export default Celebrations;
+export default RealEstate;

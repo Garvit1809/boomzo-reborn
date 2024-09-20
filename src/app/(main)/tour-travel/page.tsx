@@ -26,6 +26,7 @@ import PhoneInputWithCountrySelect from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 import "../contact/components/phone.css";
 import { z } from "zod";
+import { toast } from "@/hooks/use-toast";
 
 const TourAndTravel = () => {
   const DESTINATIONS = [
@@ -50,11 +51,7 @@ const TourAndTravel = () => {
       .string()
       .min(2, "Name must be at least 2 characters")
       .max(100, "Name must not exceed 100 characters"),
-    phoneNumber: z
-      .string()
-      .regex(/^\d+$/, "Phone number must contain only digits")
-      .min(10, "Phone number must be at least 10 digits long")
-      .max(15, "Phone number must not exceed 15 digits"),
+    phoneNumber: z.string().min(1, "Phone number is required"),
     destination: z.enum(DESTINATIONS),
   });
 
@@ -68,22 +65,30 @@ const TourAndTravel = () => {
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
+    toast({
+      title: "Received your travel request!",
+      style: {
+        backgroundColor: "var(--mygreen)",
+        color: "#fff",
+        border: "none",
+      },
+    });
   }
 
   return (
     <PageWrapper>
-      <div className="relative h-fit lg:min-h-[20rem] bg-black antialiased bg-grid-pattern bg-grid-size flex flex-col pt-[10.5rem] lg:pt-[8rem] pb-[8rem] px-[5vw] justify-center items-center gap-y-6 overflow-x-hidden overflow-y-hidden">
+      <div className="relative h-fit lg:min-h-[20rem] bg-black antialiased bg-grid-pattern bg-grid-size flex flex-col pt-[8.5rem] lg:pt-[8rem] pb-[2rem] md:pb-[8rem] px-[5vw] justify-center items-center gap-y-6 overflow-x-hidden overflow-y-hidden">
         <div className="w-full md:items-center md:justify-center antialiased relative overflow-hidden ">
-          <div className="relative z-10 w-[65%] mx-auto flex flex-col items-center justify-center bg-white rounded-2xl">
+          <div className="relative z-10 w-full md:w-[65%] mx-auto flex flex-col items-center justify-center bg-white rounded-2xl">
             {/* header */}
             <Header
               title="Let's Plan Your Adventure!"
               subTitle="Contact us to start your dream trip today!"
             />
             {/* body */}
-            <div className="flex w-full">
+            <div className="flex flex-col md:flex-row w-full">
               <LeadContactInfo />
-              <div className="border-t border-black w-[60%] flex items-center justify-center">
+              <div className="border-t-0 md:border-t border-black w-full md:w-[60%] flex items-center justify-center">
                 <Form {...form}>
                   <form
                     onSubmit={form.handleSubmit(onSubmit)}
@@ -152,7 +157,7 @@ const TourAndTravel = () => {
                     <AnimatedButton
                       text="Submit"
                       buttonType="submit"
-                      className="bg-black text-white/80 text-sm transform translate-y-3"
+                      className="bg-black text-white/80 text-sm"
                       //   disableButton={isLoading}
                     />
                   </form>
