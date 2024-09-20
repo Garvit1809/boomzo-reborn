@@ -72,7 +72,7 @@ const Footer = () => {
       .post(`${BASE_URL}${API_VERSION}/contact/newsletter`, {
         email: data.email,
       })
-      .then(({ data }) => {
+      .then(() => {
         setIsLoading(false);
         toast({
           title: "Received your mail!",
@@ -87,7 +87,7 @@ const Footer = () => {
       .catch((err) => {
         // console.log(err);
         setIsLoading(false);
-        let prodErr = err.response.data.message;
+        const prodErr = err.response.data.message;
         if (prodErr) {
           toast({
             variant: "destructive",

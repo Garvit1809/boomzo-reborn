@@ -2,7 +2,7 @@ import { Icons } from "@/icons/Icons";
 import React from "react";
 
 type Props = {
-  onClick?: any;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
   text: string | React.ReactNode;
   className?: string;
   buttonType?: "button" | "submit";

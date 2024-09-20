@@ -154,12 +154,14 @@ const TourAndTravel = () => {
                         </FormItem>
                       )}
                     />
-                    <AnimatedButton
-                      text="Submit"
-                      buttonType="submit"
-                      className="bg-black text-white/80 text-sm"
-                      //   disableButton={isLoading}
-                    />
+                    <div className="pt-4">
+                      <AnimatedButton
+                        text="Submit"
+                        buttonType="submit"
+                        className="bg-black text-white/80 text-sm"
+                        //   disableButton={isLoading}
+                      />
+                    </div>
                   </form>
                 </Form>
               </div>

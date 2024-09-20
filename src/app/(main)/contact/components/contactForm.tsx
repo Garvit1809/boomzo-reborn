@@ -62,7 +62,7 @@ const ContactForm = () => {
         helpNeeded: values.helpOption,
         message: values.message,
       })
-      .then(({ data }) => {
+      .then(() => {
         // console.log(data);
         setIsLoading(false);
         toast({
@@ -89,7 +89,7 @@ const ContactForm = () => {
 
   const { toast } = useToast();
 
-  function onError(errors: any) {
+  function onError() {
     toast({
       variant: "destructive",
       title: "Fill all necessary information!",

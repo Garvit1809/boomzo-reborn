@@ -1,4 +1,4 @@
-import { Mail, PhoneCall } from "lucide-react";
+import { Mail } from "lucide-react";
 
 const Whatsapp = () => {
   return (
