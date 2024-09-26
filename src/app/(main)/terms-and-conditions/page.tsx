@@ -95,7 +95,7 @@ const TermsAndConditions: React.FC = () => {
         </p>
         <ul className="list-none space-y-4">
           {terms.map((term, index) => (
-            <li key={term.title} className="mb-4 p-4">
+            <li key={index} className="mb-4 p-4">
               <h2 className="text-3xl font-semibold mb-2 font-wixMadeforDisplay">
                 {term.title}
               </h2>
