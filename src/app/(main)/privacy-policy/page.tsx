@@ -3,7 +3,7 @@ import React from "react";
 
 interface PrivacyPolicy {
   title: string;
-  content: string | string[] | { points: string[] };
+  content: string;
 }
 
 const PRIVACY_POLICY: PrivacyPolicy[] = [
@@ -77,7 +77,7 @@ const PRIVACY_POLICY: PrivacyPolicy[] = [
 const PrivacyPolicy: React.FC = () => {
   return (
     <PageWrapper logo="dark">
-      <div className="container py-24 md:py-40 md:px-12 px-4 mx-auto ">
+      <div className="container py-24 md:pb-40 md:pt-24 md:px-12 px-4 mx-auto ">
         <h1 className="text-4xl md:text-6xl font-bold text-center my-20 font-wixMadeforDisplay  pb-2 ">
           Privacy Policy
         </h1>
@@ -87,20 +87,10 @@ const PrivacyPolicy: React.FC = () => {
         <ul className="list-none space-y-4">
           {PRIVACY_POLICY.map((policy, index) => (
             <li key={policy.title} className="mb-4 p-4">
-              {index == 0 && (
-                <h2 className="text-3xl md:text-4xl font-semibold mb-2 font-wixMadeforDisplay">
-                  {policy.content as any}
-                </h2>
-              )}
-
-              {index > 0 && (
-                <h2 className="text-3xl font-semibold mb-2 font-wixMadeforDisplay">
-                  {policy.title}
-                </h2>
-              )}
-              {index > 0 && (
-                <p className="text-lg font-normal ">{policy.content as any}</p>
-              )}
+              <h2 className="text-3xl font-semibold mb-2 font-wixMadeforDisplay">
+                {policy.title}
+              </h2>
+              <p className="text-lg font-normal ">{policy.content}</p>
             </li>
           ))}
         </ul>

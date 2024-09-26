@@ -86,7 +86,7 @@ const terms: Term[] = [
 const TermsAndConditions: React.FC = () => {
   return (
     <PageWrapper logo="dark">
-      <div className="container py-24 md:py-40 md:px-12 px-4 mx-auto ">
+      <div className="container py-24 md:pb-40 md:pt-24 md:px-12 px-4 mx-auto ">
         <h1 className="text-4xl md:text-6xl font-bold text-center my-20 font-wixMadeforDisplay  pb-2 ">
           Terms and Conditions
         </h1>
@@ -96,20 +96,10 @@ const TermsAndConditions: React.FC = () => {
         <ul className="list-none space-y-4">
           {terms.map((term, index) => (
             <li key={term.title} className="mb-4 p-4">
-              {index == 0 && (
-                <h2 className="text-3xl md:text-4xl font-semibold mb-2 font-wixMadeforDisplay">
-                  {term.content}
-                </h2>
-              )}
-
-              {index > 0 && (
-                <h2 className="text-3xl font-semibold mb-2 font-wixMadeforDisplay">
-                  {term.title}
-                </h2>
-              )}
-              {index > 0 && (
-                <p className="text-lg font-normal ">{term.content}</p>
-              )}
+              <h2 className="text-3xl font-semibold mb-2 font-wixMadeforDisplay">
+                {term.title}
+              </h2>
+              <p className="text-lg font-normal ">{term.content}</p>
             </li>
           ))}
         </ul>

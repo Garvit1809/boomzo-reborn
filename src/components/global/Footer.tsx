@@ -37,7 +37,7 @@ const PAGEROUTES = [
   },
   {
     name: "Terms and Conditions",
-    route: "/terms",
+    route: "/terms-and-conditions",
   },
   {
     name: "Privacy Policy",
