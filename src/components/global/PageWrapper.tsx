@@ -22,7 +22,7 @@ const PageWrapper: React.FC<PageWrapperProps> = ({
         className
       )}
     >
-      <Navbar className="top-6 lg:top-2" logo={logo} />
+      <Navbar className="" logo={logo} />
       {children}
       <Footer />
     </div>

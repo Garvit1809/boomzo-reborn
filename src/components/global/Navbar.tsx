@@ -14,7 +14,7 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import WhiteLogo from "../../../public/logoWhiteCom.png";
+// import WhiteLogo from "../../../public/logoWhiteCom.png";
 import BlackLogo from "../../../public/logoBlack.png";
 import { HoveredLink, MenuItem } from "../aceternity/navbar-menu";
 import { SERVICE_ROUTES } from "@/constants/service-routes";
@@ -72,7 +72,7 @@ const Navbar = ({
   return (
     <div
       className={cn(
-        "absolute top-0 flex items-center justify-between px-[5vw] md:px-[5vw] w-full h-[4rem] bg-transparent z-20 max-w-[1450px] mx-auto",
+        "absolute top-0 flex items-center   justify-between px-[5vw] md:px-[5vw] w-full h-[4rem] bg-background z-20 max-w-[1450px] mx-auto",
         className
       )}
     >
@@ -80,17 +80,18 @@ const Navbar = ({
         <Link href="/">
           <Image
             alt="boomzo"
-            src={logo == "light" ? WhiteLogo : BlackLogo}
+            src={BlackLogo}
             width={120}
             height={120}
             priority={true}
+          
           />
         </Link>
       </div>
 
       {/* navbar */}
       <div className="gap-x-14 hidden lg:flex">
-        <Link href="/" className="text-white">
+        <Link href="/" className="text-black font-semibold ">
           Home
         </Link>
         <div className="" onMouseLeave={() => setActive(null)}>
@@ -106,10 +107,10 @@ const Navbar = ({
             </div>
           </MenuItem>
         </div>
-        <Link href="/about" className="text-white">
+        <Link href="/about" className="text-black font-semibold ">
           About Us
         </Link>
-        <Link href="/contact" className="text-white">
+        <Link href="/contact" className="text-black font-semibold ">
           Contact Us
         </Link>
       </div>
@@ -131,7 +132,7 @@ const Navbar = ({
 
       {/* sidebar */}
       <button onClick={toggleSidebar} className="lg:hidden mr-4">
-        <MenuIcon color={`${logo == "dark" ? "black" : "#f7faff"}`} />
+        <MenuIcon color={`${logo == "dark" ? "black" : "black"}`} />
       </button>
       <div
         ref={sidebarRef}

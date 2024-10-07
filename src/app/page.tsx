@@ -1,66 +1,19 @@
 "use client";
 import PageWrapper from "../components/global/PageWrapper";
 import HeroBg from "../../public/hero_bg.png";
-import HeroImg from "../../public/hero_img.png";
+import HeroImg from "../../public/men_png.png";
 import Image from "next/image";
-import Img1 from "../../public/1.png";
-import Img3 from "../../public/3.png";
-import Img4 from "../../public/4.png";
-import Img5 from "../../public/5.png";
+import { SERVICE_CARDS } from "@/constants/HomePageData";
 import AnimatedButton from "@/components/aceternity/AnimatedButton";
 import { ArrowRight } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { IMPACT_NUMBERS } from "@/constants/HomePageData";
 
-const SERVICE_CARDS = [
-  {
-    name: "Lets Plan your Trip",
-    img: Img1,
-    route: "/tour-travel",
-    btnText: "Get Started",
-  },
-  {
-    name: "Let's Celebrate in Style",
-    img: Img5,
-    route: "/celebrations",
-    btnText: "Get Started",
-  },
-  {
-    name: "Let's Find Your Flat",
-    img: Img4,
-    route: "/real-estate",
-    btnText: "Get Started",
-  },
-  {
-    name: "Let's Connect with Influencers",
-    img: Img3,
-    route: "/influencers",
-    btnText: "Coming Soon",
-  },
-];
-
-const IMPACT_NUMBERS = [
-  {
-    stat: "2000+",
-    title: "Happy Customers",
-  },
-  {
-    stat: "600+",
-    title: "Deals Closed",
-  },
-  {
-    stat: "5+",
-    title: "Services Offered",
-  },
-  {
-    stat: "94%",
-    title: "Satisfaction Rate",
-  },
-];
 
 export default function Home() {
   const route = useRouter();
   return (
-    <PageWrapper className="block bg-[black]" logo="light">
+    <PageWrapper className="block bg-background" logo="light">
       {/* hero */}
       <div
         className="mt-[7rem] mx-[2vw] md:mx-[5vw] rounded-xl z-10 relative h-[18rem] md:h-[20rem]"
@@ -74,7 +27,7 @@ export default function Home() {
         }}
       >
         <Image
-          className="absolute block bottom-0 md:top-0 right-0 left-0 z-20 h-[8rem] border-0 border-red-600 md:h-[20rem] "
+          className="absolute block bottom-0  w-fit h-[10rem]  md:right-0 -z-10  border-0 border-red-600 md:h-[20rem] "
           alt="boomzo-hero"
           src={HeroImg}
         />
@@ -86,7 +39,7 @@ export default function Home() {
                 background: "linear-gradient(135deg, #542daf, #ff9100)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
-                fontWeight: "800"
+                fontWeight: "800",
               }}
             >
               BEST DEALS
@@ -132,7 +85,7 @@ export default function Home() {
 
       {/* how boomzo works */}
       <div className="flex flex-col items-center gap-y-8 md:gap-y-14 mt mt-[6rem] md:mt-[8rem] mb-[8rem] mx-[5vw]">
-        <span className="text-2xl md:text-4xl text-white text-center">
+        <span className="text-2xl md:text-4xl text-black text-center">
           How Boomzo works
         </span>
         <div className="relative w-[90%] h-[20rem] md:w-[45rem] md:h-[26rem] mx-auto">
@@ -176,7 +129,7 @@ export default function Home() {
 
       {/* our numbers */}
       <div className="flex flex-col gap-y-8 md:gap-y-14 mt-[6rem] mb-[2rem] md:mt-[8rem] md:mb-[8rem] mx-[2vw] md:mx-[5vw] items-center">
-        <span className="text-2xl md:text-4xl text-white text-center">
+        <span className="text-2xl md:text-4xl text-black text-center">
           Our Impact in Numbers
         </span>
         <div className="grid grid-cols-2 md:grid-cols-4 w-[100%] gap-y-6">
@@ -186,8 +139,8 @@ export default function Home() {
                 key={idx}
                 className="flex flex-col gap-y-[2px] md:gap-y-1 items-center"
               >
-                <h2 className="text-2xl md:text-4xl text-white">{card.stat}</h2>
-                <h6 className="text-xs md:text-base text-white/80">
+                <h2 className="text-2xl md:text-4xl text-black">{card.stat}</h2>
+                <h6 className="text-xs md:text-base text-black/80">
                   {card.title}
                 </h6>
               </div>
