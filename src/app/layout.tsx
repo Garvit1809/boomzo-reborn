@@ -16,7 +16,7 @@ const manrope = Manrope({
 
 export const metadata: Metadata = {
   title: "Boomzo",
-  description: "",
+  description: "Find the BEST DEALS · Lets Plan your Trip ",
 };
 
 export default function RootLayout({
