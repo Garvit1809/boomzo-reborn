@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Manrope, Wix_Madefor_Display } from "next/font/google";
 import { Toaster } from "@/components/ui/toaster";
-
+import "../components/ui/pattern.css"
+ 
 const wix_for_display = Wix_Madefor_Display({
   weight: ["400", "500", "600", "700", "800"],
   subsets: ["latin"],

@@ -6,9 +6,12 @@ import ContactForm from "./components/contactForm";
 
 const Contact = () => {
   return (
-    <PageWrapper>
+    <PageWrapper >
       <div className="w-full flex flex-col lg:grid lg:grid-cols-2">
-        <div className="relative bg-black text-white flex flex-col gap-y-6 lg:gap-y-10 px-[5vw] pt-[8rem] pb-[4rem] lg:pt-[10rem] lg:pb-[6rem]">
+      <div className="flex flex-col gap-y-10 px-[5vw] py-[5rem] pt-[4rem] pb-[4rem] lg:pt-[10rem] lg:pb-[6rem]">
+          <ContactForm />
+        </div>
+        <div className="relative bgpatternline bg-no-repeat bg-center  text-black flex flex-col gap-y-6 lg:gap-y-10 px-[5vw] pt-[8rem] pb-[4rem] lg:pt-[10rem] lg:pb-[6rem]">
           {/* <Spotlight className="md:left-6 md:-top-16" fill="white" /> */}
           <h1 className="text-3xl lg:text-5xl">Lets Connect</h1>
           <p className="text-sm lg:text-xl">
@@ -24,9 +27,7 @@ const Contact = () => {
           </p>
           <SocialIcons showMail={false} />
         </div>
-        <div className="flex flex-col gap-y-10 px-[5vw] py-[5rem] pt-[4rem] pb-[4rem] lg:pt-[10rem] lg:pb-[6rem]">
-          <ContactForm />
-        </div>
+       
       </div>
     </PageWrapper>
   );

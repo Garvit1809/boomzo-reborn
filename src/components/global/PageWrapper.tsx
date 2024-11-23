@@ -18,7 +18,7 @@ const PageWrapper: React.FC<PageWrapperProps> = ({
   return (
     <div
       className={cn(
-        "relative flex flex-col min-h-[100vh] w-full overflow-hidden",
+        "relative flex flex-col min-h-[100vh] w-full ",
         className
       )}
     >
