@@ -18,9 +18,9 @@ export default function CTA() {
 
       <div className="mx-auto max-w-xl text-center">
         <h1 className="text-3xl font-extrabold sm:text-5xl">
-          <strong className="font-extrabold text-transparent bg-gradient-to-r from-[#542daf] via-purple-500 to-[#ff9100] bg-clip-text sm:block"> Get Free Consultation </strong>
+          <strong className="font-extrabold text-transparent bg-gradient-to-r from-[#542daf] via-purple-500 to-[#ff9100] bg-clip-text sm:block "> Get Free Consultation </strong>
         </h1>
-        <p className="mt-4 sm:text-xl/relaxed">
+        <p className="mt-4 text-sm md:text-xl/relaxed">
         Support customers and collaborate across your organization in one beautiful workspace.
         </p>
   

@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 import { motion } from 'framer-motion';
 
 interface Feature {
@@ -55,21 +55,11 @@ const features: Feature[] = [
 
 const HowItWork: React.FC = () => {
   const [activeFeatureIndex, setActiveFeatureIndex] = useState<number | null>(null);
-  const [delayedIndex, setDelayedIndex] = useState<number | null>(null);
-
-  useEffect(() => {
-    if (activeFeatureIndex !== null) {
-      const delayTimer = setTimeout(() => {
-        setDelayedIndex(activeFeatureIndex);
-      }, 150); // Add a slight delay for smooth transition
-      return () => clearTimeout(delayTimer);
-    } else {
-      setDelayedIndex(null);
-    }
-  }, [activeFeatureIndex]);
 
   const activeFeature =
-    delayedIndex !== null ? features[delayedIndex] : features[0];
+    activeFeatureIndex !== null ? features[activeFeatureIndex] : features[0];
+
+  
 
   return (
     <div>
@@ -86,10 +76,7 @@ const HowItWork: React.FC = () => {
           {activeFeature && (
             <motion.div
               key={activeFeature.image} // Ensures animation runs on key change
-              initial={{ opacity: 0, scale: 0.95, x: -50 }}
-              animate={{ opacity: 1, scale: 1, x: 0 }}
-              exit={{ opacity: 0, scale: 0.95, x: 50 }}
-              transition={{ duration: 0.5, ease: 'easeOut', type: 'spring' }}
+          
             >
               <Image
                 className="md:w-[40rem] md:h-[40rem] transition-all duration-300 md:p-5 transform scale-105"
@@ -113,14 +100,15 @@ const HowItWork: React.FC = () => {
                   : ''
               }`}
               onMouseEnter={() => setActiveFeatureIndex(index)}
-              onMouseLeave={() => setActiveFeatureIndex(null)}
+              
             >
               <div className="text-teal-500 mr-4">{feature.icon}</div>
               <div>
                 <h3 className="font-bold">{feature.title}</h3>
-                {delayedIndex === index && (
-                  <p className="text-sm text-gray-600">{feature.description}</p>
-                )}
+               
+                 {activeFeatureIndex === index ? <p className="text-sm text-gray-600">{feature.description}</p> : ""}
+                 
+              
               </div>
             </div>
           ))}

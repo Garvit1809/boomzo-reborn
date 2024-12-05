@@ -10,78 +10,44 @@ const terms: Term[] = [
   {
     title: "1. Introduction",
     content:
-      "Welcome to Boomzo. By accessing or using our platform, you agree to comply with and be bound by the following terms and conditions. Please review them carefully.",
+      "Welcome to Boomzo. By using our services, you agree to these Terms and Conditions. Please read them carefully.",
   },
   {
-    title: "2. User Responsibilities",
+    title: "2. Services",
     content:
-      "Users must provide accurate information and comply with all applicable laws. Users are responsible for maintaining the confidentiality of their account information.",
+      "Boomzo provides marketing and sales management services. Our services are offered under two models: Client Funded and Boomzo Funded.",
   },
   {
-    title: "3. Services Offered",
+    title: "3. Payment Terms",
     content:
-      "Boomzo connects consumers with businesses in various industries, including travel, real estate, and events. We provide results-oriented services. Agencies and freelancers failing to meet client targets will be removed based on Customer Satisfaction (CSAT) scores.",
+      "Client Funded: You are responsible for ad spend. Lower commission rates apply.\n\nBoomzo Funded: We cover ad spend. Higher commission rates apply.",
   },
   {
-    title: "4. High Demand and Limited Supply",
+    title: "4. User Responsibilities",
     content:
-      "We match high demand with a limited supply of vetted service providers to ensure quality orders. This helps maintain a high standard of service.",
+      "You agree to provide accurate information and comply with all applicable laws.",
   },
   {
-    title: "5. Platform Integrity",
+    title: "5. Limitation of Liability",
     content:
-      "Maintaining platform integrity is crucial. Any attempt to tarnish Boomzo’s image or share personal details outside the platform will result in immediate removal.",
+      "Boomzo is not liable for any indirect, incidental, or consequential damages.",
   },
   {
-    title: "6. Red Flag System",
+    title: "6. Termination",
     content:
-      "Five red flags result in removal from the platform. Clear red flags by achieving a CSAT > 95% for the next 2 orders.",
+      "We reserve the right to terminate services if you violate these terms.",
   },
   {
-    title: "7. Client Targets",
+    title: "7. Governing Law",
     content:
-      "All targets must be agreed upon before proceeding. Project managers will ensure clear communication and track progress weekly.",
+      "These terms are governed by the laws of Aligarh, Uttar Pradesh.",
   },
   {
-    title: "8. Payment Terms",
-    content:
-      "Payments must be made in accordance with the agreed-upon terms. Late payments may result in service suspension or additional fees.",
-  },
-  {
-    title: "9. Confidentiality",
-    content:
-      "All parties must maintain the confidentiality of any proprietary information shared during the course of the project.",
-  },
-  {
-    title: "10. Limitation of Liability",
-    content:
-      "Boomzo is not liable for any indirect, incidental, or consequential damages arising from the use of our platform.",
-  },
-  {
-    title: "11. Intellectual Property",
-    content:
-      "All content on the platform is the property of Boomzo and protected by intellectual property laws.",
-  },
-  {
-    title: "12. Termination",
-    content:
-      "Boomzo reserves the right to terminate any account that violates these terms and conditions.",
-  },
-  {
-    title: "13. Dispute Resolution",
-    content:
-      "Any disputes will be resolved under the jurisdiction of Aligarh courts. These terms and conditions are governed by the laws of Aligarh Jurisdiction.",
-  },
-  {
-    title: "14. Amendments",
-    content:
-      "Boomzo reserves the right to amend these terms and conditions at any time. Users will be notified of any changes.",
-  },
-  {
-    title: "15. Contact Information",
-    content: "For questions, contact us at grow@boomzo.in.",
+    title: "8. Contact Information",
+    content: "For questions, contact us at Grow@Boomzo.in.",
   },
 ];
+
 
 const TermsAndConditions: React.FC = () => {
   return (
