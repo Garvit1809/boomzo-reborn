@@ -33,7 +33,7 @@ const SocialIcons = ({ showMail }: Props) => {
         <motion.div
           whileTap={{ scale: 0.9 }}
           transition={spring}
-          className="hover:cursor-pointer text-black  hover:scale-105 transition duration-100"
+          className="hover:cursor-pointer   hover:scale-105 transition duration-100"
         >
           <Instagram  />
         </motion.div>

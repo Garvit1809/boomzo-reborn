@@ -67,7 +67,8 @@ const config: Config = {
   		},
   		backgroundImage: {
   			'grid-pattern': 'linear-gradient(rgba(255, 255, 255, 0.05) 3px, transparent 3px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 3px, transparent 3px)',
-  			mygradient: 'linear-gradient(135deg, #542daf, #ff9100)'
+  			mygradient: 'linear-gradient(135deg, #542daf, #ff9100)',
+  			mynew: 'linear-gradient(125deg, #d16eff,#73c5f0)'
   		},
   		backgroundSize: {
   			'grid-size': '120px 120px'

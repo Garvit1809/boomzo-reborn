@@ -2,7 +2,6 @@
 import React from 'react'
 import { cn } from "@/lib/utils";
 import { AnimatedList } from "@/components/ui/animated-list";
-import { useRouter } from 'next/navigation'
 
 interface Item {
     name: string;
@@ -61,11 +60,20 @@ interface Item {
   notifications = Array.from({ length: 10 }, () => notifications).flat();
 
 export default function Benefits() {
-  const navigate = useRouter();
+  const openWhatsApp = () => {
+    const phoneNumber = "+918439911779"; // Replace with the phone number you want to send the message to
+    const message = "Hello Boomzo, I need a free consultation."; // Custom message
+
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+      message
+    )}`;
+
+    window.open(url, "_blank"); // Open WhatsApp in a new tab or window
+  };
   return (
     <div> <section className="flex flex-col-reverse mx-10  justify-between gap-6 sm:gap-10 md:gap-16 lg:flex-row-reverse">
     
-    <div className="flex flex-col justify-between xl:w-5/12">
+    <div className="flex flex-col justify-between xl:w-2/5">
       <div className="sm:text-center lg:py-12 lg:text-left xl:py-24">
         <p className="mb-4 font-semibold text-transparent bg-gradient-to-r from-[#542daf] via-purple-500 to-[#ff9100] bg-clip-text md:mb-6 md:text-lg xl:text-xl">Very proud to introduce</p>
 
@@ -73,13 +81,13 @@ export default function Benefits() {
 
         <div className="flex flex-col gap-2.5 sm:flex-row sm:justify-ce
         nter lg:justify-start">
-          <a  onClick={() => navigate.push('/contact') }  className="inline-block rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100  hover:scale-105 bg-mygradient md:text-base">Start now</a>
+          
+          <a  onClick={openWhatsApp }  className="inline-block cursor-pointer rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100  hover:scale-105 bg-mygradient md:text-base">Start now</a>
 
-          <a onClick={() => navigate.push('/contact') } className="inline-block rounded-lg bg-gray-200 px-8 py-3 text-center text-sm font-semibold text-gray-500 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base">Take tour</a>
         </div>
       </div>  
     </div>  
-    <div className="h-48 overflow-hidden  rounded-lg  lg:h-auto xl:w-2/6">
+    <div className="h-48 overflow-hidden  rounded-lg  lg:h-auto xl:w-2/4">
     <AnimatedListDemo />
     </div>
   </section>

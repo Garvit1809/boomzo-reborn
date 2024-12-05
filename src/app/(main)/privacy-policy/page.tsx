@@ -10,69 +10,40 @@ const PRIVACY_POLICY: PrivacyPolicy[] = [
   {
     title: "1. Introduction",
     content:
-      "Boomzo is committed to protecting your privacy. This Privacy Policy outlines how we collect, use, and protect your personal information.",
+      "Boomzo is committed to protecting your privacy. This policy explains how we collect, use, and share your information.",
   },
   {
-    title: "2. Information Collection",
+    title: "2. Information We Collect",
     content:
-      "We collect personal information such as your name, email address, phone number, and other contact details when you register or contact us. We also collect usage data on how you interact with our platform to improve our services.",
+      "We collect information you provide directly, such as contact details and business information.",
   },
   {
-    title: "3. Use of Information",
+    title: "3. How We Use Information",
     content:
-      "We use your personal information to provide and improve our services, communicate with you, and comply with legal obligations. Usage data helps us analyze trends and enhance user experience.",
+      "We use your information to provide and improve our services, communicate with you, and comply with legal obligations.",
   },
   {
-    title: "4. Data Storage and Security",
+    title: "4. Sharing Information",
     content:
-      "We implement robust security measures to protect your personal information from unauthorized access, alteration, or disclosure. However, no method of transmission over the internet is 100% secure.",
+      "We do not share your personal information with third parties except as required by law or to provide our services.",
   },
   {
-    title: "5. User Rights",
+    title: "5. Data Security",
     content:
-      "Access: You have the right to access the personal information we hold about you.\nCorrection: You can request corrections to any inaccurate or incomplete information.\nDeletion: You may request the deletion of your personal information, subject to certain conditions. Contact us at grow@boomzo.in for assistance.",
+      "We implement security measures to protect your information.",
   },
   {
-    title: "6. Cookies",
+    title: "6. Your Rights",
     content:
-      "Our platform uses cookies to enhance your experience. You can control cookie settings through your browser.",
+      "You have the right to access, correct, or delete your personal information.",
   },
   {
-    title: "7. Third-Party Services",
+    title: "7. Changes to This Policy",
     content:
-      "We may share information with third-party service providers to facilitate our services. We do not share your personal information with third parties unless required by law or as necessary to provide our services.",
-  },
-  {
-    title: "8. Changes to Policy",
-    content:
-      "Boomzo may update this Privacy Policy from time to time. Users will be notified of significant changes by posting the updated policy on our platform.",
-  },
-  {
-    title: "9. Jurisdiction",
-    content:
-      "This Privacy Policy is governed by the laws of Aligarh Jurisdiction.",
-  },
-  {
-    title: "10. Contact Information",
-    content:
-      "For privacy-related inquiries, please contact us at grow@boomzo.in.",
-  },
-  {
-    title: "11. Limitation of Liability",
-    content:
-      "Boomzo is not liable for any indirect, incidental, or consequential damages arising from the use of our platform.",
-  },
-  {
-    title: "12. Intellectual Property",
-    content:
-      "All content on the Boomzo platform, including text, graphics, logos, and software, is the property of Boomzo and protected by intellectual property laws.",
-  },
-  {
-    title: "13. Dispute Resolution",
-    content:
-      "Any disputes arising from this Privacy Policy or the use of Boomzo will be resolved under the jurisdiction of Aligarh courts.",
+      "We may update this policy. We will notify you of significant changes.",
   },
 ];
+
 
 const PrivacyPolicy: React.FC = () => {
   return (

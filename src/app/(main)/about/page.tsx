@@ -40,7 +40,7 @@ const About = () => {
             <p className=" text-lg mb-6">
             We began our journey as a social media management firm, driven by a passion to help businesses grow. Our initial focus was on enhancing online presence and engagement. However, we soon realized that simply managing social media wasn&apos;t enough to fulfill our mission of truly growing businesses.
             </p>
-            <p className=" ">
+            <p className=" text-lg ">
             Recognizing this gap, we expanded our services to include lead generation and performance marketing. While this helped businesses attract more potential customers, we noticed another challenge: many of our clients struggled to convert these leads into actual sales. They were investing resources in generating leads but lacked the sales expertise to close deals effectively. 
             </p>
           </div>
@@ -55,27 +55,27 @@ const About = () => {
                 objectFit="cover"
               />
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-3  gap-4">
               {/* Stat Card 1 */}
-              <div className="bg-white rounded-lg shadow p-4 flex flex-col items-center">
-                <h3 className="text-2xl font-bold text-gray-900">3.5</h3>
-                <p className="text-sm text-gray-600 text-center leading-tight">Years Experience</p>
+              <div className="bg-white rounded-lg shadow p-4 py-4 flex flex-col items-center">
+                <h3 className="text-2xl font-bold text-gray-900">30%+</h3>
+                <p className="text-sm text-gray-600  text-center leading-tight">Conversion rate</p>
               </div>
               {/* Stat Card 2 */}
               <div className="bg-white rounded-lg shadow p-4 flex flex-col items-center">
-                <h3 className="text-2xl font-bold text-gray-900">23</h3>
-                <p className="text-sm text-gray-600 text-center leading-tight">Project Challenges</p>
+                <h3 className="text-2xl font-bold text-gray-900">24</h3>
+                <p className="text-sm text-gray-600 text-center  leading-tight">Clients Served</p>
               </div>
               {/* Stat Card 3 */}
               <div className="bg-white rounded-lg shadow p-4 flex flex-col items-center">
-                <h3 className="text-2xl font-bold text-gray-900">830+</h3>
+                <h3 className="text-2xl font-bold text-gray-900">50+</h3>
                 <p className="text-sm text-gray-600 text-center leading-tight">Positive Reviews</p>
               </div>
               {/* Stat Card 4 */}
-              <div className="bg-white rounded-lg shadow p-4 flex flex-col items-center">
-                <h3 className="text-2xl font-bold text-gray-900">100K</h3>
-                <p className="text-sm text-gray-600 text-center leading-tight">Trusted Students</p>
-              </div>
+              {/* <div className="bg-white rounded-lg shadow p-4 flex flex-col items-center">
+                <h3 className="text-2xl font-bold text-gray-900">2</h3>
+                <p className="text-sm text-gray-600 text-center leading-tight">Trusted </p>
+              </div> */}
             </div>
           </div>
         </div>

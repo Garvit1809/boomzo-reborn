@@ -20,7 +20,7 @@ import axios from "axios";
 import { API_VERSION, BASE_URL } from "@/constants/endpoints";
 import SocialIcons from "./SocialIcons";
 import AnimatedButton from "../aceternity/AnimatedButton";
-import { SERVICE_ROUTES } from "@/constants/service-routes";
+// import { SERVICE_ROUTES } from "@/constants/service-routes";
 
 const PAGEROUTES = [
   {
@@ -149,7 +149,7 @@ const Footer = () => {
           {/* %%%% Links %%%% */}
           <div className="w-[50%] flex flex-col gap-y-12">
             {/* Services */}
-            <div className=" border-none border-white flex flex-col gap-y-4">
+            {/* <div className=" border-none border-white flex flex-col gap-y-4">
               <h2 className="text-xl font-bold">Services</h2>
               <ul className="flex flex-col gap-y-2 text-white/50">
                 {SERVICE_ROUTES.map((service, idx) => {
@@ -162,7 +162,7 @@ const Footer = () => {
                   );
                 })}
               </ul>
-            </div>
+            </div> */}
             {/* Pages Links */}
             <div className=" border-none border-white flex flex-col gap-y-4">
               <h2 className="text-xl font-bold">Links</h2>
@@ -170,7 +170,7 @@ const Footer = () => {
                 {PAGEROUTES.map((route, idx) => {
                   return (
                     <Link className="w-fit" key={idx} href={route.route}>
-                      <li className="hover:cursor-pointer w-fit">
+                      <li className="hover:cursor-pointer text-sm md:text-base w-fit">
                         {route.name}
                       </li>
                     </Link>
